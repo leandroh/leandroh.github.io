@@ -57,6 +57,8 @@ h1.logotype {
 @media screen and (max-width: 480px) {
   h1.logotype {
     font-size:50px !important;
-    padding-top:80px;display:block
+  }
+  h1.slogan {
+    font-size:22px !important;
   }
 }
