@@ -55,6 +55,12 @@ h1.logotype {
   color: #e1352f;
   text-shadow: 0 2px 2px #000;
 }
+h1.slogan {
+  color: #f5f5f5;
+  background-color: #00AEC8;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05) inset;
+}
 #main {
   text-align: center;
   background-color: #f5f5f5;
