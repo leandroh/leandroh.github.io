@@ -5,26 +5,26 @@ paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 highlighter: pygments
 markdown: kramdown
-disqus: dbyll
-google_analytics: dbyll
+disqus: leandroh
+google_analytics: leandroh
 
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: dbyll
+      title: parasitando.me/blog
 
-description: Stylish Jekyll Theme
+description: parasitando.me/blog
 author:
-  name: dbyll
-  email: dbyll@ismaildemirbilek.com
-  github: dbtek
-  twitter: dbtek
-  pinterest: asd123
-  linkedin: asd123
-  bio: Your stylish, minimalist theme!
-  email_md5: 726351295ec82e145928582f595aa3aa
+  name: Leandro "Parazito"
+  email: leandroh@gmail.com
+  github: leandroh
+  twitter: parazito
+  #pinterest: asd123
+  linkedin: https://br.linkedin.com/pub/leandro-heuert/1/a45/189
+  bio: Uma pessoa apaixonada por programação poliglota, padrões de desenvolvimento web, banco de dados e APIs RESTful.
+  email_md6: edea60ebe538f3bd0bf2fea687a94a79
 
 rss_path: feed.xml
 categories_path: categories.html
