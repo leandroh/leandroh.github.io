@@ -1,0 +1,134 @@
+body {
+  background: none repeat scroll 0 0 #eee;
+  color: #777;
+  font-family: "Lucida Sans","Lucida Sans Regular","Lucida Grande","Lucida Sans Unicode",Arial,sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  height: 100%;
+  min-width: 100%;
+}
+
+#wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+section {
+  padding: 20px 0;
+  /*border-top: 1px solid #ccc;*/
+}
+
+a {
+  color: #008df2;
+  text-decoration: underline;
+}
+
+a:hover, a:visited {
+  text-decoration: none;
+}
+
+a.see-more {
+  font-style: italic;
+  font-size: 14px;
+  color: #555;
+}
+
+h1 {
+color: #e1352f;
+       font-family: "Lobster",cursive;
+       font-size: 75px;
+       font-weight: 200;
+       line-height: 60px;
+margin: 90px auto 0;
+	max-width: 910px;
+	text-align: center;
+	text-shadow: 0 1px 1px #000;
+}
+
+h4 {
+  font-style: italic;
+  text-align: center
+}
+
+body h2 {
+  color: #383838;
+  /* color: hsl( 210, 90%, 60% ); */
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+section.non-top {
+  border: none;
+}
+
+article time {
+  font-size: 11px;
+  text-transform: uppercase
+}
+
+article {
+  line-height: 32px;
+}
+
+.soc {
+    list-style: outside none none;
+    margin: 50px 0 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+}
+
+.soc li {
+    display: inline-block;
+}
+
+.soc li a {
+  margin-right: 15px;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold
+}
+
+nav li + li:before{
+  /*content: " | ";*/
+  content: "\00b7";
+  padding: 0 10px;
+}
+
+nav ul li a {
+  color: #999;
+  border-bottom: 1px dashed #999;
+  text-decoration: none
+}
+
+nav ul li a:hover {
+  color: #000;
+}
+
+/*
+nav ul li:before {
+  content: "\00b7";
+}
+nav ul li:first-child:before {
+  content: none;
+}
+*/
+
+
+
+/*
+nav ul li:after { content: " \00b7"; }
+nav ul li:last-child:after { content: none; }
+*/
