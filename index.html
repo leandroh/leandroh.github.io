@@ -14,18 +14,13 @@
     <div id="wrapper">
 
       <header>
+        <img src="img/blank.gif" id="random-image" alt="" />
       <h1>parasitando.me</h1>
-      <!--<h4>Cozinhando internet nas coisas.</h4>-->
-      <nav>
-      <ul>
-        <li><a href="">Sobre</a></li>
-        <li><a href="">Contato</a></li>
-      </ul>
-      </nav>
+      <h4>#ruby #rails #nodejs #javascript #angular #performance</h4>
       </header>
 
       <section class="non-top">
-      <h2>Blog</h2>
+      <h2>artigos</h2>
 
       <article>
       <a href="#">Estrutura de um documento em HTML5</a>
@@ -57,32 +52,22 @@
 
       </section>
 
-      <!--
-      <section>
-      <h2>Sobre</h2>
-      <p>
-
-      </p>
-      <p>
-      Parasitando.me é uma pequena loja criativa de tecnologia web e mobile. Nós gostamos de fazer as coisas darem certo, e esperamos que você também.
-      </p>
-      </section>
 
       <section>
       <h2>Contato</h2>
       <p>
-      Gostariamos muito de ver se você está atrás de um site, aplicativo, produto e qualquer outro tipo de tecnologia e afins. Dê-nos um grito via <a href="http://twitter.com/parazito">twitter</a> ou por e-mail 
+      Dá um grito via <a href="http://twitter.com/parazito">twitter</a> ou por e-mail
       <script>
-        var mailme = 'leandro@' + 'parasitando.me';
-        document.write('<a href="mailto:' + mailme + '">' + mailme+ '</a>.');
+        var mailme = 'leandroh' + '@' + 'gmail.com';
+        document.write('<a href="mailto:' + mailme + '">' + mailme + '</a>.');
       </script>
       </p>
       </section>
-      -->
+
 
       <section>
       <ul class="soc">
-        <li><a href="#"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-32.png"></a></li>
+        <li><a href="https://www.facebook.com/leandro.parazito"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-32.png"></a></li>
         <li><a href="http://twitter.com/parazito" class="soc-twitter"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-32.png"></a></li>
         <li><a href="https://plus.google.com/u/0/109836160382122471720" class="soc-google"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-google-plus-32.png"></a></li>
         <li><a href="http://br.linkedin.com/pub/leandro-heuert/1/a45/189/" class="soc-linkedin"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-linkedin-32.png"></a></li>
@@ -91,6 +76,12 @@
       </section>
 
     </div>
+
+    <script>
+      var imgs = ["bear", "beer", "controller", "diamond", "evil", "skull"],
+          num = Math.floor(Math.random() * imgs.length);
+      document.getElementById("random-image").src = "img/" + imgs[num] + ".svg";
+    </script>
 
   </body>
 </html>

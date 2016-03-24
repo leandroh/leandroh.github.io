@@ -1,5 +1,5 @@
 body {
-  background: none repeat scroll 0 0 #eee;
+  background: none repeat scroll 0 0 #f3f3f3;
   color: #777;
   font-family: "Lucida Sans","Lucida Sans Regular","Lucida Grande","Lucida Sans Unicode",Arial,sans-serif;
   font-size: 18px;
@@ -14,9 +14,13 @@ body {
   padding: 10px;
 }
 
+header img {
+  opacity: .8
+}
+
 section {
   padding: 20px 0;
-  /*border-top: 1px solid #ccc;*/
+  border-top: 1px solid #DBDBDB;
 }
 
 a {
@@ -35,29 +39,29 @@ a.see-more {
 }
 
 h1 {
+  display: inline-block;
 color: #e1352f;
-       font-family: "Lobster",cursive;
-       font-size: 75px;
+       font-family: "Lobster";
+       font-size: 2.8em;
        font-weight: 200;
        line-height: 60px;
-margin: 90px auto 0;
+margin: 90px 12px 0;
 	max-width: 910px;
 	text-align: center;
-	text-shadow: 0 1px 1px #000;
+	text-shadow: 0 1px 1px #777;
 }
 
 h4 {
   font-style: italic;
-  text-align: center
+  font-weight: normal;
+  color: #BCBCBC
 }
 
 body h2 {
-  color: #383838;
-  /* color: hsl( 210, 90%, 60% ); */
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
+  color: #777;
   font-size: 24px;
-  font-weight: bold;
+  font-family: "Lobster";
+  letter-spacing: 0.2em
 }
 
 section.non-top {
@@ -88,47 +92,3 @@ article {
 .soc li a {
   margin-right: 15px;
 }
-
-nav ul {
-  list-style-type: none;
-  text-align: center;
-}
-
-nav ul li {
-  display: inline;
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: bold
-}
-
-nav li + li:before{
-  /*content: " | ";*/
-  content: "\00b7";
-  padding: 0 10px;
-}
-
-nav ul li a {
-  color: #999;
-  border-bottom: 1px dashed #999;
-  text-decoration: none
-}
-
-nav ul li a:hover {
-  color: #000;
-}
-
-/*
-nav ul li:before {
-  content: "\00b7";
-}
-nav ul li:first-child:before {
-  content: none;
-}
-*/
-
-
-
-/*
-nav ul li:after { content: " \00b7"; }
-nav ul li:last-child:after { content: none; }
-*/
