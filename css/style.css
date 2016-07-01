@@ -68,6 +68,10 @@ section.non-top {
   border: none;
 }
 
+section.analytics {
+  text-align: center
+}
+
 article time {
   font-size: 11px;
   text-transform: uppercase
