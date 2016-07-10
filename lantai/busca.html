@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>Lantai</title>
+	<meta name="description" content="Lantai">
+	<meta name="keywords" content="keywords">
+	<meta name="author" content="Sensorial">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css">
+
+	<!-- Animate css -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+	<!-- Main Style-->
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<!-- Utilities -->
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/livingston-css3-mediaqueries-js/1.0.0/css3-mediaqueries.min.js"></script>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script type='text/javascript' src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<!-- 	<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div> -->
+
+	<!-- Main menu -->
+	<header>
+
+
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="navbar-brand">
+						<a href="./" alt="Lantai"><h1 class="icons-logotipo">Lantai</h1></a>
+					</div>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="./">Home</a></li>
+						<li><a href="institucional">Institucional</a></li>
+						<!-- Produtos dropdown -->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Produtos</a>
+							<ul class="dropdown-menu left">
+								<li><a href="#">Linhas</a></li>
+								<li><a href="#">Pesquisar produtos</a></li>
+								<li><a href="#">Downloads</a></li>
+							</ul>
+						</li>
+						<!-- Fim produtos dropdown -->
+						<li><a href="blog">Blog</a></li>
+						<li><a href="contato">Contato</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="onde-encontrar"><a  href="./"><i class="icons-map-icon"></i><span>Onde Encontrar</span></a></li>
+						<li><a class="icons hidden-sm" href="#"><i class="icons-facebook"></i><span>Facebook</span></a></li>
+						<li><a class="icons hidden-sm" href="#"><i class="icons-instagram"></i><span>Instagram</span></a></li>
+
+						<li class="dropdown">
+							<a class="icons dropdown-toggle" data-toggle="dropdown" href="#"><i class="icons-pesquisa"></i><span>Buscar</span></a>
+							<ul class="dropdown-menu right search">
+								<form class="search-header">
+									<!-- Submit button -->
+									<button type="submit" class="btn"><i class="glyphicon glyphicon-search"></i></button>
+
+									<input type="text" class="form-control pull-left" placeholder="Buscar">
+
+								</form>
+							</ul>
+						</li>
+
+
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div><!--/.container-fluid -->
+		</nav>
+	</header>
+
+	<!-- Header busca -->
+	<div id="header-search">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+
+					<input type="text" class="form-control pull-left" id="search" placeholder="Pesquisar">
+
+				</div>
+				<div class="col-lg-6 text-right">
+					Filtros
+					<ul class="list-inline filters">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Linhas <i class="icons-arrow-filter"></i></a>
+							<ul class="dropdown-menu left">
+								<li><a href="#">Linhas</a></li>
+								<li><a href="#">Pesquisar produtos</a></li>
+								<li><a href="#">Downloads</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Material <i class="icons-arrow-filter"></i></a>
+							<ul class="dropdown-menu left">
+								<li><a href="#">Linhas</a></li>
+								<li><a href="#">Pesquisar produtos</a></li>
+								<li><a href="#">Downloads</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Cor <i class="icons-arrow-filter"></i></a>
+							<ul class="dropdown-menu left">
+								<li>
+									<input type="checkbox" id="cor1" value="second_checkbox" class="filter" data-filter=".cor1"> <label for="cor1">cor 1</label>
+								</li>
+								<li><a href="#">Pesquisar produtos</a></li>
+								<li><a href="#">Downloads</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tamanho <i class="icons-arrow-filter"></i></a>
+							<ul class="dropdown-menu left">
+								<li><a href="#">Linhas</a></li>
+								<li><a href="#">Pesquisar produtos</a></li>
+								<li><a href="#">Downloads</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+
+			<!--
+				Adicionei uns botões só pra teste
+
+				Esse plugin pega pela classe, pelo texto dentro de uma tag, várias opções
+
+				-->
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<button class="filter" data-filter="all">All</button>
+				<button class="filter" data-filter=".blue">Blue</button>
+				<button class="filter" data-filter=".orange">Orange</button>
+				<button class="filter" data-filter=".red">Red</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Conteúdo -->
+	<div class="conteudo" id="busca">
+		<div class="container">
+			<div class="row" id="items">
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix blue cor1">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix orange">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="" >
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Hijau</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="" >
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Hijau</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristola</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+				<!-- Item -->
+				<div class="col-xs-6 col-sm-4 col-md-3 mix">
+					<a href="#" alt="">
+						<figure>
+							<!-- <a href="artigo-blog" class="img-link" alt="Titulo notícia blog"> -->
+							<img src="assets/images/produtos/produto.jpg" class="img-responsive" alt="">
+							<img src="assets/images/produtos/produto-hover.jpg" class="img-responsive hover-product" alt="">
+							<!-- </a> -->
+							<figcaption>
+								<h3 class="titulo">Tijolo Inglês</h3>
+								<h4>Bristol</h4>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<!-- Fim Item -->
+
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="pager-list">
+						<!-- Pagination buttons will be generated here -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+					<div class="sobre-footer">
+						<a href="./" alt="Lantai"><h4 class="icons-logotipo">Lantai</h4></a>
+						<p>
+							Fusce in velit id dolor molestie facilisis. Etiam nec massa vitae enim mollis vehicula. Nullam commodo enim eu cursus laoreet. Nunc sit amet ex quisAliquam dapibus et nibh non mollis. In hac habitasse platea dictumst. Nullam commodo enim eu cursus laoreet.
+						</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+					<h4>Links</h4>
+					<ul class="footer-links">
+						<li class="active"><a href="./">Home</a></li>
+						<li><a href="institucional">Institucional</a></li>
+						<!-- Produtos dropdown -->
+						<li><a href="#">Linhas</a></li>
+						<li><a href="#">Pesquisar produtos</a></li>
+						<li><a href="#">Downloads</a></li>
+						<!-- Fim produtos dropdown -->
+						<li><a href="blog">Blog</a></li>
+						<li><a href="contato">Contato</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+					<h4>Contato</h4>
+					<div class="footer-contato">
+						<div class="row item-footer-contato">
+							<div class="col-xs-12 col-lg-2">
+								<i class="icons-phone"></i>
+							</div>
+							<div class="col-lg-10">
+								<span class="phone">(21)0000-0000</span>
+							</div>
+						</div>
+						<div class="row item-footer-contato">
+							<div class="col-xs-12 col-lg-2">
+								<i class="icons-pin"></i>
+							</div>
+							<div class="col-lg-10">
+								<span>Barra da Tijuca - Rio de Janeiro - RJ</span>
+								<span>Av. das Américas, 500 . Bloco 06 - Sala 220.</span>
+								<span>Cep: 22640-100</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<h4>Instagram</h4>
+					<div class="row">
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<img src="https://placeimg.com/350/350/arch" class="img-responsive" alt="">
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<img src="https://placeimg.com/350/350/arch" class="img-responsive" alt="">
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<img src="https://placeimg.com/350/350/arch" class="img-responsive" alt="">
+						</div>
+					</div>
+					<div class="row margem-topo">
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<img src="https://placeimg.com/350/350/arch" class="img-responsive" alt="">
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<img src="https://placeimg.com/350/350/arch" class="img-responsive" alt="">
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<img src="https://placeimg.com/350/350/arch" class="img-responsive" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<hr>
+					<span >LANTAI REVESTIMENTOS - Todos os direitos reservados @  - Fotos meramente Ilustrativas.</span>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/isotope/1.5.25/jquery.isotope.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js"></script>
+	<script src="assets/js/jquery.mixitup.min.js"></script>
+	<script src="assets/js/jquery.mixitup-pagination.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+	<script src="assets/js/main.js"></script>
+</body>
+</html>

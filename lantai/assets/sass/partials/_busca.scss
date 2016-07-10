@@ -1,0 +1,156 @@
+/*=================================
+=               Busca             =
+=================================*/
+
+#header-search{
+
+	.form-control{
+		border:none;
+		padding: 0;
+		@include input-placeholder {
+			color: #b48857;
+			text-transform: uppercase;
+		}
+		&:focus{
+			@include box-shadow(none);
+		}
+	}
+	ul.filters{
+		display: inline-block;
+		margin: 8px 0;
+
+		li{
+			a{
+				i{
+					height: 8px;
+					width: 12px;
+					margin: 5px;
+				}
+				color: #b48857;
+				&:hover, &:focus, &:active{
+					text-decoration: none;
+				}
+			}
+			ul.dropdown-menu{
+				box-shadow: none;
+				border: 1px solid #b48857;
+				border-radius: 0;
+				padding: 0;
+				top: 39px;
+				left: -100px;
+				li{
+					font-size:12px;
+
+					a{
+						padding: 10px;
+						border-bottom: 1px solid #b48857;
+
+						&:last-child{
+							border:none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#busca{
+	// @include opacity(0);
+	a{
+		figure{
+			position:relative;
+			overflow:hidden;
+			margin-bottom: 30px;
+
+			img{
+				width: 100%;
+				height: auto;
+				&.hover-product{
+					@include transition(all 0.4s ease-in-out);
+					position:absolute;
+					top:0;
+					@include opacity(0);
+				}
+			}
+			figcaption{
+				@include transition(all 0.2s ease-in-out);
+				position:absolute;
+				margin-bottom: -54px;
+				width: 100%;
+				padding: 10px;
+				bottom: 0;
+				background: #b48857;
+				color: #fff;
+				@media (max-width: $break-mobile) {
+					position: relative;
+					margin-bottom: 0;
+				}
+
+				h3{
+					font-size:14px;
+					text-transform: uppercase;
+					font-weight: lighter;
+					margin:0;
+					text-decoration: none;
+				}
+				h4{
+					font-size: 18px;
+					text-transform: uppercase;
+					font-weight: bold;
+					margin:0;
+				}
+			}
+		}
+		&:hover{
+			figure{
+				img{
+					&.hover-product{
+						@include opacity(1);
+					}
+				}
+				figcaption{
+					margin-bottom:0;
+				}
+			}
+			text-decoration: none;
+		}
+	}
+
+	#items {
+		.mix{
+			display: none;
+		}
+
+	}
+	.pager-list{
+		text-align: center;
+		.pager{
+			display: inline-block;
+			vertical-align: middle;
+			cursor: pointer;
+			margin: 5px;
+			padding: 10px;
+			background: #fff;
+			border: 1px solid #b48857;
+			color: #b48857;
+
+			&.active{
+				background-color: #b48857;
+				color: #fff;
+			}
+
+			&.page-prev, &.page-next{
+				padding: 7px 9px;
+				span{
+					font-family: 'Lato', sans-serif;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+
+
+
+}

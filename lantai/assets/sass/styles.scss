@@ -1,0 +1,34 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+ 
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+ @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+ @import "compass/css3/user-interface";
+ @import "compass/utilities/sprites"; // needed for sprite generation
+ @import "icons/*.png";
+ @include all-icons-sprites;
+
+ @import "compass/css3";
+
+ @import "variaveis";
+ @import "partials/base";
+ @import "partials/botoes";
+
+ @import "partials/home";
+ @import "partials/institucional";
+ @import "partials/downloads";
+ @import "partials/linhas";
+ @import "partials/linha";
+ @import "partials/busca";
+ @import "partials/contato";
+ @import "partials/blog";
+ @import "partials/bloco.blog";
+ @import "partials/header";
+ @import "partials/destaque";
+ @import "partials/footer";
+
+
+ 

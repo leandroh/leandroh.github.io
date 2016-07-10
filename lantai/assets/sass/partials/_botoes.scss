@@ -1,0 +1,91 @@
+/*==============================
+=            Botões            =
+==============================*/
+
+.btn-primary{
+	font-weight: 300;
+	letter-spacing: .1em;
+	padding: 5px 20px;
+	text-transform: uppercase;
+	@include border-radius(0);
+	border-size: 3px;
+	color:#fff;
+	background: #b18350;
+	border-color: #b18350;
+	margin-top:15px;
+
+	&:hover, &:active, &:focus, &:focus:hover, &:active:hover, &:active:focus{
+		background: transparent;
+		color: #b18350;
+		border-color: #d29344;
+	}
+}
+.btn-secondary{
+	font-weight: 700;
+	padding: 5px 20px;
+	background-color: #ea2c37;
+	border-color: #ea2c37;
+	color: #fff;
+	
+	&:hover, &:active, &:focus, &:focus:hover, &:active:hover, &:active:focus{
+		background-color:#bd000b;
+		border-color: #bd000b;
+		color: #fff;
+	}
+}
+
+.btn-nav{
+	font-weight: 700;
+	padding: 5px 20px;
+	text-transform: uppercase;
+	background-color: #fff;
+	border-color: #888888;
+	color: #888888;
+	
+	&:hover, &:active, &:focus, &:focus:hover, &:active:hover, &:active:focus{
+		background-color:#888888;
+		border-color: #888888;
+		color: #fff;
+	}
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+	outline: 0;
+}
+.btn{
+	@include transition(all 0.4s ease-in-out);
+}
+
+.btn-rd{
+	border-radius: 30px;
+}
+
+.btn-outline{
+	border: 1px;
+	border-style: solid;
+	background: transparent;
+} 
+// .btn-outline:hover, .btn-outline:focus, .btn-outline:active {
+// 	border: 1px;
+// }
+
+.btn-veja{
+	margin: 5px 0px;
+	padding: 4px 10px;
+	border: 1px;
+	border-style: solid;
+	border-radius: 30px;
+	border-color: #878787;
+	color: #878787;
+	font-size:10px;
+	font-family: 'Open Sans', sans-serif;
+
+	&:hover, &:active, &:focus, &:focus:hover, &:active:hover, &:active:focus{
+		padding: 4px 10px;
+		border: 1px;
+		border-style: solid;
+		border-color: #878787;
+		background-color: #878787;
+		color: #fff;
+	}
+}
