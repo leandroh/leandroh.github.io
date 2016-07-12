@@ -339,9 +339,15 @@ $(document).ready(function(){
 
 	$("#items").mixItUp('filter', hashMapper.buildFilterFromURL());
 
-	$("ul.filters input[type=checkbox]").each(function(i, input) {
-		input.checked = true;
-	});
+	var checkedOptions = hashMapper.getCheckedOptions();
+	if (checkedOptions) {
+		$("ul.filters input[type=checkbox]").each(function(i, input) {
+			var isChecked = checkedOptions.indexOf(input.getAttribute('id'));
+			if (isChecked != -1) {
+				input.checked = true;
+			}
+		});
+	}
 
 });
 
@@ -385,16 +391,29 @@ function HashMapper() {
 	}
 
 	this.buildFilterFromURL = function() {
+		if (document.location.hash == '') {
+			return 'all';
+		}
+
+		var opts = this.getCheckedOptions();
+		for (var i = 0; i < opts.length; i++) {
+			this.add(opts[i]);
+		}
+
+		return this.buildFilter();
+	}
+
+	this.getCheckedOptions = function() {
+		if (document.location.hash == '') {
+			return null;
+		}
+
 		var hash = document.location.hash.substr(1),
 				opts = hash.substr(hash.indexOf('checkbox='))
 							.split('&')[0]
 							.split('=')[1]
 							.split('+');
 
-		for (var i = 0; i < opts.length; i++) {
-			this.add(opts[i]);
-		}
-
-		return this.buildFilter();
+		return opts;
 	}
 }
