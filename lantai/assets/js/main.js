@@ -337,7 +337,12 @@ $(document).ready(function(){
 		 	hashMapper.buildHash();
 	 });
 
-	 hashMapper.buildFilterFromURL();
+	$("#items").mixItUp('filter', hashMapper.buildFilterFromURL());
+
+	$("ul.filters input[type=checkbox]").each(function(i, input) {
+		input.checked = true;
+	});
+
 });
 
 $(window).load(function () {
@@ -345,6 +350,8 @@ $(window).load(function () {
 });
 
 ////////////////////////////////////////////////////////////////////////////////
+
+
 
 function HashMapper() {
 	this.checked = [];
@@ -378,6 +385,16 @@ function HashMapper() {
 	}
 
 	this.buildFilterFromURL = function() {
-		console.log('document.location.hash', document.location.hash);
+		var hash = document.location.hash.substr(1),
+				opts = hash.substr(hash.indexOf('checkbox='))
+							.split('&')[0]
+							.split('=')[1]
+							.split('+');
+
+		for (var i = 0; i < opts.length; i++) {
+			this.add(opts[i]);
+		}
+
+		return this.buildFilter();
 	}
 }
