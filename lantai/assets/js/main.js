@@ -298,23 +298,23 @@ $(document).ready(function(){
             $matching = $matching.not(this);
         }
     });
-      	$("#items").mixItUp('filter', $matching);
+      	//$("#items").mixItUp('filter', $matching);
       }
 
       else {
         // redefine o filtro para mostrar todos os itens se a entrada estiver vazia
-        $("#items").mixItUp('filter', 'all');
+        //$("#items").mixItUp('filter', 'all');
     }
 }, 200 );
    }
 
    $("#search").val(url.fparam('search'));
 
-   mixitUp();
+   //mixitUp();
 
    $("#search").keyup(function(){
-   	mixitUp();
-   	document.location.hash = "&search=" + $("#search").val().toLowerCase();
+   //	mixitUp();
+   	//document.location.hash = "&search=" + $("#search").val().toLowerCase();
 
 	//  função delay  chamada para se certificar de usuário parou de digitar
 
@@ -322,7 +322,22 @@ $(document).ready(function(){
 
    /*=====  Final dos códigos do MixiTup  ======*/
 
+	 var hashMapper = new HashMapper();
+	 $("ul.filters input[type=checkbox]").click(function() {
+		 	var elId = this.getAttribute('id');
 
+		 	if ( $('#' + elId).is(':checked') ) {
+		 		hashMapper.add(elId);
+		 	} else {
+		 		hashMapper.remove(elId);
+		 	}
+
+		 	$("#items").mixItUp('filter', hashMapper.buildFilter());
+
+		 	hashMapper.buildHash();
+	 });
+
+	 hashMapper.buildFilterFromURL();
 });
 
 $(window).load(function () {
@@ -331,18 +346,38 @@ $(window).load(function () {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-$("#cor1").click(function() {
+function HashMapper() {
+	this.checked = [];
 
-	console.log('#cor1 checked', $("#cor1").is(':checked'));
-
-	if ($("#cor1").is(':checked')) {
-		document.location.hash = "?";
-		if ($("#search").val()) {
-			document.location.hash += "&search=" + $("#search").val().toLowerCase();
-		}
-		document.location.hash += "&checkbox=cor1";
-	} else {
-		mixitUp();
+	this.add = function(el) {
+		this.checked.push(el);
 	}
 
-});
+	this.remove = function(el) {
+		var index = this.checked.indexOf(el);
+		if (index != -1) {
+			this.checked.splice(index, 1);
+		}
+	}
+
+	this.buildHash = function() {
+		if (this.checked.length) {
+			document.location.hash = "&checkbox=" + this.checked.join('+');
+		} else {
+			document.location.hash = '';
+		}
+	}
+
+	this.buildFilter = function() {
+		if (this.checked.length) {
+			var c = this.checked.map(function(el) { return '.' + el; });
+			return c.join(',');
+		} else {
+			return 'all';
+		}
+	}
+
+	this.buildFilterFromURL = function() {
+		console.log('document.location.hash', document.location.hash);
+	}
+}
