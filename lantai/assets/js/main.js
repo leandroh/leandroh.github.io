@@ -298,12 +298,12 @@ $(document).ready(function(){
             $matching = $matching.not(this);
         }
     });
-      	//$("#items").mixItUp('filter', $matching);
+      	$("#items").mixItUp('filter', $matching);
       }
 
       else {
         // redefine o filtro para mostrar todos os itens se a entrada estiver vazia
-        //$("#items").mixItUp('filter', 'all');
+        $("#items").mixItUp('filter', 'all');
     }
 }, 200 );
    }
@@ -313,8 +313,8 @@ $(document).ready(function(){
    //mixitUp();
 
    $("#search").keyup(function(){
-   //	mixitUp();
-   	//document.location.hash = "&search=" + $("#search").val().toLowerCase();
+   mixitUp();
+   	document.location.hash = "&search=" + $("#search").val().toLowerCase();
 
 	//  função delay  chamada para se certificar de usuário parou de digitar
 
