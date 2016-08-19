@@ -61,6 +61,17 @@
       var imgs = ["bear", "beer", "controller", "diamond", "evil", "skull"],
           num = Math.floor(Math.random() * imgs.length);
       document.getElementById("random-image").src = "img/" + imgs[num] + ".svg";
+
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+            console.log('Service Worker Registered');
+          });
+
+        navigator.serviceWorker.ready.then(function(registration) {
+           console.log('Service Worker Ready');
+        });
+      }
     </script>
   </body>
 </html>
