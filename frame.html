@@ -1,9 +1,21 @@
 <section class="breadcrumb">
     <div class="center">
-        <frameset rows="100%">
-            <frameset cols="100%">
-                <frame src="http://177.154.146.147/users/sign_in?origin=orsegups" frameborder="0" scrolling="yes" style="width: 95%; height: 95%;"></frame>
-            </frameset>
-        </frameset>
+      <iframe id="webApp" src="" frameborder="0" scrolling="yes" style="width: 95%; height: 95%;"></iframe>
     </div>
 </section>
+
+<script type="text/javascript">
+    function getParameterByName(name) {
+      var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+      return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+    }
+    var defaultUrl = 'http://10.0.10.76/users/sign_in?origin=orsegups';
+    var resetTokenUrl = 'http://10.0.10.76/password_reset/';
+    var frameEl = document.getElementById('webApp');
+    var token = getParameterByName('reset_token');
+    if (token) {
+      frameEl.src = resetTokenUrl + token + '?origin=orsegups';
+    } else {
+      frameEl.src = defaultUrl;
+    }
+</script>
