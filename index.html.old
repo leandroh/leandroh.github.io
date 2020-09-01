@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>parasitando.me</title>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300|Lobster" />
+  </head>
+  <body>
+
+    <div id="wrapper">
+
+      <header>
+        <img src="img/blank.gif" id="random-image" alt="" />
+      <h1>parasitando.me</h1>
+      <h4>#ruby #rails #nodejs #javascript #angular #performance</h4>
+      </header>
+
+      <section class="non-top">
+        <script type="text/javascript" src="https://static.medium.com/embed.js" async=""></script><a class="m-profile" href="https://medium.com/@parazito">Leandro Parazito</a>
+      </section>
+
+
+      <section>
+      <h2>Contato</h2>
+      <p>
+      Dá um grito via <a href="http://twitter.com/parazito">twitter</a> ou por e-mail
+      <script>
+        var mailme = 'leandroh' + '@' + 'gmail.com';
+        document.write('<a href="mailto:' + mailme + '">' + mailme + '</a>.');
+      </script>
+      </p>
+      </section>
+
+
+      <section>
+      <ul class="soc">
+        <li><a href="https://www.facebook.com/leandro.parazito"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-32.png"></a></li>
+        <li><a href="http://twitter.com/parazito" class="soc-twitter"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-32.png"></a></li>
+        <li><a href="https://plus.google.com/u/0/109836160382122471720" class="soc-google"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-google-plus-32.png"></a></li>
+        <li><a href="http://br.linkedin.com/pub/leandro-heuert/1/a45/189/" class="soc-linkedin"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-linkedin-32.png"></a></li>
+        <li><a href="https://github.com/leandroh" class="soc-github soc-icon-last"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/github-32.png"></a></li>
+      </ul>
+      </section>
+
+
+    <section class="analytics">
+      <a title="Real Time Web Analytics" href="http://clicky.com/100969549"><img alt="Real Time Web Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
+      <script src="//static.getclicky.com/js" type="text/javascript"></script>
+      <script type="text/javascript">try{ clicky.init(100969549); }catch(e){}</script>
+      <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100969549ns.gif" /></p></noscript>
+    </section>
+
+
+    </div>
+
+    <script>
+      var imgs = ["bear", "beer", "controller", "diamond", "evil", "skull"],
+          num = Math.floor(Math.random() * imgs.length);
+      document.getElementById("random-image").src = "img/" + imgs[num] + ".svg";
+
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+            console.log('Service Worker Registered');
+          });
+
+        navigator.serviceWorker.ready.then(function(registration) {
+           console.log('Service Worker Ready');
+        });
+      }
+    </script>
+
+    <!-- Start of Async Drift Code -->
+    <script>
+    !function() {
+      var t;
+      if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
+      t.methods = [ "identify", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+      t.factory = function(e) {
+        return function() {
+          var n;
+          return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e, n, o, r;
+        e = 3e5, r = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + r + "/" + t + ".js",
+        n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+      });
+    }();
+    drift.SNIPPET_VERSION = '0.2.0'
+    drift.load('5ac2a6ga75ai')
+    </script>
+    <!-- End of Async Drift Code -->
+  </body>
+</html>
