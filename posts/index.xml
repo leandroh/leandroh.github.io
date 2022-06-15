@@ -12,8 +12,7 @@
       <pubDate>Wed, 15 Jun 2022 11:05:37 -0300</pubDate>
       
       <guid>https://parazito.dev/posts/06-13-2022-asdf-gerenciador-de-versao-de-linguagem-de-programacao/</guid>
-      <description>O asdf é um gerenciador de versões para várias linguagens de programação. Um gerenciador de versão com suporte para Python, Ruby, Node.js, Elixir, Erlang, Rust e muitas outras linguagens. Basta instalar o plugin da sua linguagem favorita através da linha de comando do seu terminal com o asdf e já começar a codar 💻
-Vamos baixar e configurar o asdf e instalar um plugin para cada ferramenta que precisamos gerenciar. Existem diversas formas de instalação para o asdf.</description>
+      <description>O asdf é um gerenciador de versão com suporte para Python, Ruby, Node.js, Elixir, Erlang, Rust e muitas outras linguagens e ferramentas.</description>
     </item>
     
   </channel>

@@ -12,8 +12,7 @@
       <pubDate>Wed, 15 Jun 2022 11:05:37 -0300</pubDate>
       
       <guid>https://parazito.dev/posts/06-13-2022-asdf-gerenciador-de-versao-de-linguagem-de-programacao/</guid>
-      <description>O asdf é um gerenciador de versões para várias linguagens de programação. Um gerenciador de versão com suporte para Python, Ruby, Node.js, Elixir, Erlang, Rust e muitas outras linguagens. Basta instalar o plugin da sua linguagem favorita através da linha de comando do seu terminal com o asdf e já começar a codar 💻
-Vamos baixar e configurar o asdf e instalar um plugin para cada ferramenta que precisamos gerenciar. Existem diversas formas de instalação para o asdf.</description>
+      <description>O asdf é um gerenciador de versão com suporte para Python, Ruby, Node.js, Elixir, Erlang, Rust e muitas outras linguagens e ferramentas.</description>
     </item>
     
     <item>
@@ -22,10 +21,7 @@ Vamos baixar e configurar o asdf e instalar um plugin para cada ferramenta que p
       <pubDate>Wed, 15 Jun 2022 11:05:37 -0300</pubDate>
       
       <guid>https://parazito.dev/about/</guid>
-      <description>Olá! 👋
-Me chamo Leandro, mas algumas pessoas me chamam de Pará (ou parazito, nickname da época do IRC).
-Também gosto bastante de andar de bike por aí ao redor da ilha de Florianópolis. E também de caminhada, montanhismo e estar em meio à natureza.
-Curiosidades: gosta de Clash Royale, Cerveja, Crepioca e Chimarrão (com gengibre).</description>
+      <description>Um pouco sobre o Leandro, também conhecido por algumas pessoas como Pará.</description>
     </item>
     
   </channel>
