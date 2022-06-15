@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on parasitando ideias</title>
+    <link>https://parazito.dev/posts/</link>
+    <description>Recent content in Posts on parasitando ideias</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 15 Jun 2022 11:05:37 -0300</lastBuildDate><atom:link href="https://parazito.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASDF: Gerenciador de versão de linguagens para desenvolvedores</title>
+      <link>https://parazito.dev/posts/06-13-2022-asdf-gerenciador-de-versao-de-linguagem-de-programacao/</link>
+      <pubDate>Wed, 15 Jun 2022 11:05:37 -0300</pubDate>
+      
+      <guid>https://parazito.dev/posts/06-13-2022-asdf-gerenciador-de-versao-de-linguagem-de-programacao/</guid>
+      <description>O asdf é um gerenciador de versões para várias linguagens de programação. Um gerenciador de versão com suporte para Python, Ruby, Node.js, Elixir, Erlang, Rust e muitas outras linguagens. Basta instalar o plugin da sua linguagem favorita através da linha de comando do seu terminal com o asdf e já começar a codar 💻
+Vamos baixar e configurar o asdf e instalar um plugin para cada ferramenta que precisamos gerenciar. Existem diversas formas de instalação para o asdf.</description>
+    </item>
+    
+  </channel>
+</rss>
