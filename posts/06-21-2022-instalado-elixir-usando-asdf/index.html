@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-pt" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Instalando Elixir usando asdf | parasitando ideias</title>
+<meta name="keywords" content="">
+<meta name="description" content="Plugin Elixir para gerenciador de versões asdf.">
+<meta name="author" content="">
+<link rel="canonical" href="https://parazito.dev/posts/06-21-2022-instalado-elixir-usando-asdf/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d7fb4cbf980fe688a21621b06a795933c4e6bb2d4070ec940667af1715d84af2.css" integrity="sha256-1/tMv5gP5oiiFiGwanlZM8Tmuy1AcOyUBmevFxXYSvI=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://parazito.dev/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://parazito.dev/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://parazito.dev/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://parazito.dev/apple-touch-icon.png">
+<link rel="mask-icon" href="https://parazito.dev/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E352W0VQR7"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E352W0VQR7', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Instalando Elixir usando asdf" />
+<meta property="og:description" content="Plugin Elixir para gerenciador de versões asdf." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://parazito.dev/posts/06-21-2022-instalado-elixir-usando-asdf/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-26T17:42:31-03:00" />
+<meta property="article:modified_time" content="2022-06-26T17:42:31-03:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Instalando Elixir usando asdf"/>
+<meta name="twitter:description" content="Plugin Elixir para gerenciador de versões asdf."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://parazito.dev/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Instalando Elixir usando asdf",
+      "item": "https://parazito.dev/posts/06-21-2022-instalado-elixir-usando-asdf/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Instalando Elixir usando asdf",
+  "name": "Instalando Elixir usando asdf",
+  "description": "Plugin Elixir para gerenciador de versões asdf.",
+  "keywords": [
+    
+  ],
+  "articleBody": " Anteriormente, falamos sobre o asdf, e vamos instalar a linguagem Elixir usando esse gerenciador de versões de linguagens de programação chamado asdf.\nInstalando Vamos precisar do plugin Elixir asdf-elixir para o asdf, este plugin depende do unzip instalado na sua máquina. Mas antes, precisamos instalar o Erlang. E para instalar as versões do Erlang, usamos o plugin asdf-erlang.\nCom o asdf instalado na sua máquina, no seu terminal, rode o comando:\nasdf plugin-add erlang E, logo em seguida, rode o comando:\nasdf plugin-add elixir Com o plugin adicionado, precisamos instalar uma versão. Com o comando:\nasdf install erlang latest E também:\nasdf install elixir latest No lugar da palavra latest (que pega a última versão), você pode passar a versão desejada. Para listar as versões disponibilizadas, rode o comando asdf list elixir:\nInstale uma versão desejada, desta forma:\nasdf install elixir 1.13.3 Definindo uma versão Agora você vai precisar definir uma versão local ou global para a sua nova linguagem. Para definir uma versão local do diretório atual, rode o comando:\nasdf local elixir 1.13.3 Para uma versão instalada globalmente em todo o sitema, rode:\nasdf global elixir 1.13.3 Testando a instalação Para se certificar de que deu tudo certo, rode o comando asdf current:\nAgora você já pode rodar o Elixir no seu sistema. Para ver a versão desejada do Elixir, rode o comando elixir -v:\nAbra o iex e digite os seguintes comandos:\nPronto! 🔮\n# Os alquimistas estão chegando # Estão chegando os alquimistas # Os alquimistas estão chegando # Estão chegando os alquimistas # – Jorge Ben Jor ",
+  "wordCount" : "262",
+  "inLanguage": "pt-pt",
+  "datePublished": "2022-06-26T17:42:31-03:00",
+  "dateModified": "2022-06-26T17:42:31-03:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://parazito.dev/posts/06-21-2022-instalado-elixir-usando-asdf/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "parasitando ideias",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://parazito.dev/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://parazito.dev/" accesskey="h" title="parasitando ideias (Alt + H)">parasitando ideias</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://parazito.dev/" title="Início">
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://parazito.dev/about/" title="Sobre">
+                    <span>Sobre</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Instalando Elixir usando asdf
+    </h1>
+    <div class="post-description">
+      Plugin Elixir para gerenciador de versões asdf.
+    </div>
+    <div class="post-meta"><span title='2022-06-26 17:42:31 -0300 -03'>junho 26, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><img loading="lazy" src="/elixir-cover.png" alt="Elixir logo"  />
+</p>
+<p>Anteriormente, falamos <a href="https://parazito.dev/posts/06-13-2022-asdf-gerenciador-de-versao-de-linguagem-de-programacao/">sobre o asdf</a>, e vamos instalar a linguagem <a href="https://elixir-lang.org/">Elixir</a> usando esse gerenciador de versões de linguagens de programação chamado <a href="https://github.com/asdf-vm/asdf">asdf</a>.</p>
+<h2 id="instalando">Instalando<a hidden class="anchor" aria-hidden="true" href="#instalando">#</a></h2>
+<p>Vamos precisar do plugin Elixir <a href="https://github.com/asdf-vm/asdf-elixir"><code>asdf-elixir</code></a> para o asdf, este plugin <strong>depende</strong> do <code>unzip</code> instalado na sua máquina. Mas antes, precisamos instalar o <a href="https://www.erlang.org/">Erlang</a>. E para instalar as versões do Erlang, usamos o plugin <a href="https://github.com/asdf-vm/asdf-erlang"><code>asdf-erlang</code></a>.</p>
+<p>Com o <a href="https://parazito.dev/posts/06-13-2022-asdf-gerenciador-de-versao-de-linguagem-de-programacao/">asdf instalado</a> na sua máquina, no seu terminal, rode o comando:</p>
+<pre tabindex="0"><code>asdf plugin-add erlang
+</code></pre><p>E, logo em seguida, rode o comando:</p>
+<pre tabindex="0"><code>asdf plugin-add elixir
+</code></pre><p>Com o plugin adicionado, precisamos instalar uma versão. Com o comando:</p>
+<pre tabindex="0"><code>asdf install erlang latest
+</code></pre><p>E também:</p>
+<pre tabindex="0"><code>asdf install elixir latest
+</code></pre><p>No lugar da palavra <code>latest</code> (que pega a última versão), você pode passar a versão desejada. Para listar as versões disponibilizadas, rode o comando <code>asdf list elixir</code>:</p>
+<p><img loading="lazy" src="/asdf-list-elixir.png" alt="Versões do Elixir"  />
+</p>
+<p>Instale uma versão desejada, desta forma:</p>
+<pre tabindex="0"><code>asdf install elixir 1.13.3
+</code></pre><h2 id="definindo-uma-versão">Definindo uma versão<a hidden class="anchor" aria-hidden="true" href="#definindo-uma-versão">#</a></h2>
+<p>Agora você vai precisar definir uma versão <strong>local</strong> ou <strong>global</strong> para a sua nova linguagem. Para definir uma versão local do diretório atual, rode o comando:</p>
+<pre tabindex="0"><code>asdf local elixir 1.13.3
+</code></pre><p>Para uma versão instalada globalmente em todo o sitema, rode:</p>
+<pre tabindex="0"><code>asdf global elixir 1.13.3
+</code></pre><h2 id="testando-a-instalação">Testando a instalação<a hidden class="anchor" aria-hidden="true" href="#testando-a-instalação">#</a></h2>
+<p>Para se certificar de que deu tudo certo, rode o comando <code>asdf current</code>:</p>
+<p><img loading="lazy" src="/asdf-current-elixir-erlang.png" alt="Versão atual do Elixir e Erlang"  />
+</p>
+<p>Agora você já pode rodar o Elixir no seu sistema. Para ver a versão desejada do Elixir, rode o comando <code>elixir -v</code>:</p>
+<p><img loading="lazy" src="/elixir-v-1-13-3.png" alt="Exibindo a versão do Elixir"  />
+</p>
+<p>Abra o <code>iex</code> e digite os seguintes comandos:</p>
+<p><img loading="lazy" src="/iex-hello-world.png" alt="&amp;ldquo;Hello, World!&amp;rdquo; em Elixir com iex"  />
+</p>
+<p>Pronto! 🔮</p>
+<pre tabindex="0"><code># Os alquimistas estão chegando
+# Estão chegando os alquimistas
+# Os alquimistas estão chegando
+# Estão chegando os alquimistas
+# – Jorge Ben Jor
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://parazito.dev/">parasitando ideias</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

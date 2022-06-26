@@ -5,7 +5,16 @@
     <link>https://parazito.dev/posts/</link>
     <description>Recent content in Posts on parasitando ideias</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 15 Jun 2022 11:05:37 -0300</lastBuildDate><atom:link href="https://parazito.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jun 2022 17:42:31 -0300</lastBuildDate><atom:link href="https://parazito.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalando Elixir usando asdf</title>
+      <link>https://parazito.dev/posts/06-21-2022-instalado-elixir-usando-asdf/</link>
+      <pubDate>Sun, 26 Jun 2022 17:42:31 -0300</pubDate>
+      
+      <guid>https://parazito.dev/posts/06-21-2022-instalado-elixir-usando-asdf/</guid>
+      <description>Plugin Elixir para gerenciador de versões asdf.</description>
+    </item>
+    
     <item>
       <title>ASDF: Gerenciador de versão de linguagens para pessoas desenvolvedoras</title>
       <link>https://parazito.dev/posts/06-13-2022-asdf-gerenciador-de-versao-de-linguagem-de-programacao/</link>
