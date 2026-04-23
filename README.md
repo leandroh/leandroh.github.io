@@ -1,3 +1,3 @@
 # leandroh.github.io
 
-👉 https://parazito.dev/
+Personal site 👉 [parazito.dev](https://parazito.dev/)
