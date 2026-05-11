@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como saber se uma imagem foi gerada por IA - parazito</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'JetBrains Mono', Menlo, Consolas, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Courier New', monospace; max-width: 700px; margin: 0 auto; padding: 0; line-height: 1.7; color: rgb(196, 196, 197); font-size: 16px; background: #1a1b1e; }
+    .main-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid rgb(100, 100, 100); }
+    .logo { font-size: 1.25rem; font-weight: 600; color: rgb(196, 196, 197); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { color: rgb(150, 150, 151); text-decoration: none; font-size: 0.875rem; font-weight: 500; }
+    .nav-links a:hover { color: rgb(196, 196, 197); }
+    .lang-switch { margin-left: 1rem; }
+    .lang-switch a { color: #999; text-decoration: none; font-size: 0.8rem; }
+    .lang-switch a:hover { color: #666; }
+    main { padding: 1.5rem 2rem; }
+    h1 { margin-top: 0; font-size: 2.25rem; font-weight: 600; color: rgb(196, 196, 197); }
+    h2, h3, h4, h5, h6 { margin-top: 2rem; font-weight: 600; color: rgb(196, 196, 197); }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    img { max-width: 200px; height: auto; border-radius: 8px; margin: 1rem 0; }
+    .post-content img { max-width: 100%; }
+    a { color: rgb(120, 180, 200); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    pre { background: rgb(40, 42, 46); color: rgb(220, 220, 220); padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; }
+    pre code { background: transparent; padding: 0; border-radius: 0; font-size: inherit; color: inherit; }
+    code { background: rgb(40, 42, 46); color: rgb(220, 220, 220); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.875rem; font-family: 'JetBrains Mono', Menlo, Consolas, Monaco, monospace; }
+    .post-meta { color: rgb(140, 140, 140); font-size: 0.9rem; margin-top: -0.5rem; margin-bottom: 2rem; }
+    .posts-list { list-style: none; padding-left: 0; }
+    .posts-list li { margin-bottom: 0.5rem; }
+    .posts-list .date { color: rgb(140, 140, 140); margin-right: 0.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <span class="logo"><img src="/images/paralogo.png" alt="parazito logo" style="height: 64px; vertical-align: middle; margin-right: 12px;"> parazito</span>
+      <div class="nav-links">
+        <a href="/br/" style="color: rgb(150, 150, 151); font-size: 0.875rem; margin-right: 1rem;">← início</a>
+        <div class="lang-switch">
+          <a href="/en/">EN</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article class="post-content"><h1 id="como-saber-se-uma-imagem-foi-gerada-por-ia">Como saber se uma imagem foi gerada por IA</h1>
+
+<p class="post-meta">6 de maio de 2026 · 4 min de leitura</p>
+
+<p>Postei uma imagem <a href="https://www.linkedin.com/feed/update/urn:li:activity:7457462175737987072/">no LinkedIn</a> semana passada e logo abaixo dela apareceu uma faixa que eu nunca tinha visto:</p>
+
+<blockquote>
+  <p><strong>Credenciais de conteúdos</strong><br />
+Aplicativo ou dispositivo usado: OpenAI Media Service API<br />
+Gerado por: OpenAI OpCo, LLC<br />
+Data de emissão: 5 de maio de 2026</p>
+</blockquote>
+
+<p>A imagem em questão era um RACI Matrix que eu tinha pedido pro ChatGPT gerar. Como o LinkedIn sabia?</p>
+
+<h2 id="a-resposta-curta-a-imagem-se-entregou">A resposta curta: a imagem se entregou</h2>
+
+<p>A imagem carrega uma <strong>assinatura criptográfica embutida</strong> dentro do próprio arquivo. É um padrão chamado <strong><a href="https://c2pa.org">C2PA</a></strong> (Coalition for Content Provenance and Authenticity), e o nome bonitinho disso é “Content Credentials”. Adobe, Microsoft, OpenAI, Meta e outros entraram nessa coalizão pra empurrar o padrão.</p>
+
+<p>O que a OpenAI faz: toda imagem gerada pelo ChatGPT/DALL·E/Sora desde 2024 sai do forno com um manifest C2PA grudado dentro do arquivo. O LinkedIn (e TikTok, e Meta) lê esse manifest no upload, valida a assinatura contra a lista de issuers confiáveis e mostra aquela faixa.</p>
+
+<p>Não é detector de IA. Não é heurística. É metadata assinada que o <strong>próprio gerador</strong> carimbou.</p>
+
+<h2 id="olhando-o-cabx-por-dentro">Olhando o <code>caBX</code> por dentro</h2>
+
+<p>Dá pra ver o manifest na unha. PNGs são uma sequência de “chunks”: <code>IHDR</code> pro header, <code>IDAT</code> pros pixels, <code>IEND</code> pro fim. C2PA aparece como um chunk extra de tipo <code>caBX</code>:</p>
+
+<pre><code>chunks:
+  IHDR  length=13
+  caBX  length=23626   ← manifest C2PA, ~23KB
+  IDAT  length=65536
+  IDAT  length=65536
+  ...
+  IEND
+</code></pre>
+
+<p>Vinte e três kilobytes só de proveniência. Dentro do <code>caBX</code> tem uma estrutura JUMBF (JPEG Universal Metadata Box Format) com:</p>
+
+<ul>
+  <li><code>c2pa.assertions</code>: declarações (“foi gerado pela OpenAI Media Service API”, data de emissão, hash dos pixels)</li>
+  <li><code>c2pa.signature</code>: assinatura digital do certificado da OpenAI</li>
+  <li><code>c2pa.icon</code>: o ícone “cr” que aparece no canto da preview do LinkedIn</li>
+</ul>
+
+<p>A assinatura é o que importa: ela amarra criptograficamente o conteúdo da imagem ao nome do issuer. Se você editar 1 pixel, a assinatura quebra. Se alguém tentar falsificar (carimbar sua foto com manifest da OpenAI), não passa pelo verificador porque eles não têm a chave privada.</p>
+
+<h2 id="outros-jeitos-de-identificar-imagem-ia">Outros jeitos de identificar imagem IA</h2>
+
+<p>C2PA é o canal “cooperativo”: funciona quando o gerador colabora. Mas e quando não tem manifest?</p>
+
+<p><strong>Pista visual.</strong> Mãos com 6 dedos, texto que vira hieróglifo, sombras saindo de direções diferentes, simetria estranha em rostos. Modelos atuais corrigiram quase tudo isso, mas ainda escorrega em texto pequeno e geometria de objetos no fundo.</p>
+
+<p><strong>Detectores de IA.</strong> Hive, AI or Not, Sensity. São classificadores treinados pra reconhecer artefatos típicos de modelos generativos. Funcionam razoavelmente em DALL·E e Midjourney “puros”, mas se você pegar uma imagem IA, comprimir em JPEG várias vezes, fazer screenshot, recortar, eles começam a errar feio.</p>
+
+<p><strong>Watermarking invisível.</strong> Google fez o SynthID, que embute um padrão estatístico nos pixels que sobrevive a compressão e crop moderado. Não tá universalizado, depende de cada gerador implementar.</p>
+
+<h2 id="removendo-o-c2pa-se-quiser">Removendo o C2PA (se quiser)</h2>
+
+<p>O manifest é só um chunk. Qualquer reencode que descarta chunks auxiliares mata ele:</p>
+
+<pre><code class="language-bash"># macOS já vem com sips
+sips -s format png imagem.png --out limpa.png
+
+# ou abrir no Preview e exportar como PNG
+# ou tirar screenshot da imagem aberta
+</code></pre>
+
+<p>Depois disso, o LinkedIn não tem mais como atestar a origem. O badge “cr” some. Importante: isso só remove a <em>prova de autoria</em>, não disfarça que é IA. Um detector visual ainda pode pegar.</p>
+
+<h2 id="por-que-isso-importa">Por que isso importa</h2>
+
+<p>C2PA não vai resolver desinformação. Ninguém é obrigado a deixar o manifest, e qualquer ferramenta de edição pode strippar ele. Mas inverte o ônus: em vez de tentar provar que algo é IA, a gente passa a poder provar que algo <strong>veio de uma fonte específica</strong>. É a diferença entre detectar uma falsificação e ter uma nota fiscal.</p>
+
+<p>Pra mim o mais interessante é o que aconteceu de fato: postei uma imagem, e o LinkedIn leu metadata, validou contra um certificado raiz, e me delatou. Tudo isso em milissegundos. A infraestrutura de proveniência já tá rodando, a maioria das pessoas só não percebeu ainda.</p>
+</article>
+  </main>
+</body>
+</html>
