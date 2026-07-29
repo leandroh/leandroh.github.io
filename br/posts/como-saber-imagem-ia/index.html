@@ -33,6 +33,22 @@
     .posts-list { list-style: none; padding-left: 0; }
     .posts-list li { margin-bottom: 0.5rem; }
     .posts-list .date { color: rgb(140, 140, 140); margin-right: 0.5rem; }
+    html { scroll-behavior: smooth; }
+    .to-top { position: fixed; right: 1.5rem; bottom: 1.5rem; width: 2.75rem; height: 2.75rem; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgb(40, 42, 46); border: 1px solid rgb(100, 100, 100); color: rgb(196, 196, 197); font-size: 1.1rem; line-height: 1; text-decoration: none; }
+    .to-top:hover { background: rgb(52, 54, 58); color: #fff; text-decoration: none; }
+    /* Fade in after the first screenful, no JavaScript. Browsers without
+       scroll-driven animations keep the button permanently visible. */
+    @supports (animation-timeline: scroll()) {
+      .to-top { opacity: 0; animation: to-top-fade linear both; animation-timeline: scroll(root block); animation-range: 300px 600px; }
+      @keyframes to-top-fade {
+        from { opacity: 0; pointer-events: none; }
+        to { opacity: 1; pointer-events: auto; }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .to-top { animation: none; opacity: 1; pointer-events: auto; }
+    }
   </style>
 </head>
 <body>
@@ -122,7 +138,7 @@ sips -s format png imagem.png --out limpa.png
 <p>C2PA não vai resolver desinformação. Ninguém é obrigado a deixar o manifest, e qualquer ferramenta de edição pode strippar ele. Mas inverte o ônus: em vez de tentar provar que algo é IA, a gente passa a poder provar que algo <strong>veio de uma fonte específica</strong>. É a diferença entre detectar uma falsificação e ter uma nota fiscal.</p>
 
 <p>Pra mim o mais interessante é o que aconteceu de fato: postei uma imagem, e o LinkedIn leu metadata, validou contra um certificado raiz, e me delatou. Tudo isso em milissegundos. A infraestrutura de proveniência já tá rodando, a maioria das pessoas só não percebeu ainda.</p>
-</article>
+</article><a class="to-top" href="#top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</a>
   </main>
 </body>
 </html>
