@@ -33,6 +33,22 @@
     .posts-list { list-style: none; padding-left: 0; }
     .posts-list li { margin-bottom: 0.5rem; }
     .posts-list .date { color: rgb(140, 140, 140); margin-right: 0.5rem; }
+    html { scroll-behavior: smooth; }
+    .to-top { position: fixed; right: 1.5rem; bottom: 1.5rem; width: 2.75rem; height: 2.75rem; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgb(40, 42, 46); border: 1px solid rgb(100, 100, 100); color: rgb(196, 196, 197); font-size: 1.1rem; line-height: 1; text-decoration: none; }
+    .to-top:hover { background: rgb(52, 54, 58); color: #fff; text-decoration: none; }
+    /* Fade in after the first screenful, no JavaScript. Browsers without
+       scroll-driven animations keep the button permanently visible. */
+    @supports (animation-timeline: scroll()) {
+      .to-top { opacity: 0; animation: to-top-fade linear both; animation-timeline: scroll(root block); animation-range: 300px 600px; }
+      @keyframes to-top-fade {
+        from { opacity: 0; pointer-events: none; }
+        to { opacity: 1; pointer-events: auto; }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .to-top { animation: none; opacity: 1; pointer-events: auto; }
+    }
   </style>
 </head>
 <body>
@@ -69,6 +85,12 @@
   <li><strong>Elixir</strong> - Currently learning</li>
   <li><strong>Go</strong> - For infrastructure projects</li>
   <li><strong>Shell Script</strong> - Automation and DevOps</li>
+</ul>
+
+<h2 id="posts"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(160, 160, 170)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="13" y2="17"></line></svg>Posts</h2>
+
+<ul class="posts-list">
+  <li><span class="date">2026-07-26</span> <a href="/en/posts/install-phoenix-in-one-command/">Install Phoenix in one command (up and running)</a></li>
 </ul>
 
 <h2 id="reach-out"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(160, 160, 170)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><path d="M22 2L11 13"></path><path d="M22 2L15 22L11 13L2 9L22 2Z"></path></svg>Reach out</h2>

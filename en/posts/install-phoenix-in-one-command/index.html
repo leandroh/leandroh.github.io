@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install Phoenix in one command (up and running) - parazito</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'JetBrains Mono', Menlo, Consolas, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Courier New', monospace; max-width: 700px; margin: 0 auto; padding: 0; line-height: 1.7; color: rgb(196, 196, 197); font-size: 16px; background: #1a1b1e; }
+    .main-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid rgb(100, 100, 100); }
+    .logo { font-size: 1.25rem; font-weight: 600; color: rgb(196, 196, 197); text-decoration: none; transition: opacity 0.15s ease; }
+    .logo:hover { opacity: 0.75; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { color: rgb(150, 150, 151); text-decoration: none; font-size: 0.875rem; font-weight: 500; }
+    .nav-links a:hover { color: rgb(196, 196, 197); }
+    .lang-switch { margin-left: 1rem; }
+    .lang-switch a { color: #999; text-decoration: none; font-size: 0.8rem; }
+    .lang-switch a:hover { color: #666; }
+    main { padding: 1.5rem 2rem; }
+    h1 { margin-top: 0; font-size: 2.25rem; font-weight: 600; color: rgb(196, 196, 197); }
+    h2, h3, h4, h5, h6 { margin-top: 2rem; font-weight: 600; color: rgb(196, 196, 197); }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    img { max-width: 200px; height: auto; border-radius: 8px; margin: 1rem 0; }
+    .post-content img { max-width: 100%; }
+    a { color: rgb(120, 180, 200); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    pre { background: rgb(40, 42, 46); color: rgb(220, 220, 220); padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; }
+    pre code { background: transparent; padding: 0; border-radius: 0; font-size: inherit; color: inherit; }
+    code { background: rgb(40, 42, 46); color: rgb(220, 220, 220); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.875rem; font-family: 'JetBrains Mono', Menlo, Consolas, Monaco, monospace; }
+    .post-meta { color: rgb(140, 140, 140); font-size: 0.9rem; margin-top: -0.5rem; margin-bottom: 2rem; }
+    .posts-list { list-style: none; padding-left: 0; }
+    .posts-list li { margin-bottom: 0.5rem; }
+    .posts-list .date { color: rgb(140, 140, 140); margin-right: 0.5rem; }
+    html { scroll-behavior: smooth; }
+    .to-top { position: fixed; right: 1.5rem; bottom: 1.5rem; width: 2.75rem; height: 2.75rem; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgb(40, 42, 46); border: 1px solid rgb(100, 100, 100); color: rgb(196, 196, 197); font-size: 1.1rem; line-height: 1; text-decoration: none; }
+    .to-top:hover { background: rgb(52, 54, 58); color: #fff; text-decoration: none; }
+    /* Fade in after the first screenful, no JavaScript. Browsers without
+       scroll-driven animations keep the button permanently visible. */
+    @supports (animation-timeline: scroll()) {
+      .to-top { opacity: 0; animation: to-top-fade linear both; animation-timeline: scroll(root block); animation-range: 300px 600px; }
+      @keyframes to-top-fade {
+        from { opacity: 0; pointer-events: none; }
+        to { opacity: 1; pointer-events: auto; }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .to-top { animation: none; opacity: 1; pointer-events: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <a class="logo" href="/en/"><img src="/images/paralogo.png" alt="parazito logo" style="height: 64px; vertical-align: middle; margin-right: 12px;"> parazito</a>
+      <div class="nav-links">
+        <a href="/en/" style="color: rgb(150, 150, 151); font-size: 0.875rem; margin-right: 1rem;">← home</a>
+        <div class="lang-switch">
+          <a href="/br/">Português</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article class="post-content"><h1 id="install-phoenix-in-one-command-up-and-running">Install Phoenix in one command (up and running)</h1>
+
+<p class="post-meta">July 26, 2026 · 7 min read</p>
+
+<p>I’ve been learning Elixir slowly, in my spare time, through pet projects. The kind of learning that lives in the gaps of a week. Which means the enemy isn’t difficulty — it’s friction. If I sit down with 40 minutes and spend 35 of them installing a language runtime, the project dies right there.</p>
+
+<p>Phoenix now ships a one-liner that removes exactly that friction:</p>
+
+<pre><code class="language-bash">curl https://new.phoenixframework.org/myapp | sh
+</code></pre>
+
+<p>On my machine that went from <strong>nothing installed</strong> to a Phoenix app answering HTTP requests in <strong>150 seconds</strong>. No Erlang, no Elixir, no Postgres beforehand.</p>
+
+<p>That’s the advertised command, and it works. But it isn’t the one I ran.</p>
+
+<h2 id="download-it-first">Download it first</h2>
+
+<p>Piping a remote script straight into your shell means a server you don’t control gets to run arbitrary code as your user, and you never see what it did. You don’t have to be paranoid about the Phoenix team specifically to dislike that shape — the URL is fetched over the network every time, and “it was fine last week” isn’t a guarantee about today.</p>
+
+<p>So download it, then run it:</p>
+
+<pre><code class="language-bash">curl -fsS -o myapp_new.sh https://new.phoenixframework.org/myapp
+sh myapp_new.sh
+</code></pre>
+
+<p>This isn’t my invention. It’s the first thing the script’s own header comments tell you to do:</p>
+
+<pre><code class="language-sh"># To run locally without | sh:
+#
+#     $ curl -fsS -o myapp_new.sh https://new.phoenixframework.org/myapp
+#     $ sh myapp_new.sh
+</code></pre>
+
+<p>The Phoenix folks put the safer path in the file and the convenient path on the website. Take the one in the file. It costs you one extra command.</p>
+
+<p>And the reading is genuinely worth it, which is the part I didn’t expect. It’s <strong>94 lines of <code>sh</code></strong> — a two-minute read, no cleverness, no minified blob. In those two minutes you learn where the runtime gets installed, which versions you’re being handed, and the one decision the script quietly makes on your behalf that you might want to override. That’s a better deal than most installers offer.</p>
+
+<p>One detail you’ll notice immediately: the URL path becomes your app name. The server templates it into the script before sending it, so <code>curl .../blog</code> hardcodes an app called <code>blog</code>. Underscores work too.</p>
+
+<h2 id="the-four-things-it-does">The four things it does</h2>
+
+<p><strong>1. Installs Elixir and Erlang into <code>~/.elixir-install</code>.</strong> Pinned versions — Elixir 1.19.0 on OTP 28.1 — fetched from official release tarballs. Not Homebrew, not asdf, not your system package manager. Its own directory, which is the detail I liked most: I already have asdf on this machine, and the two never met. Nothing to un-break later.</p>
+
+<p><strong>2. Installs the <code>phx_new</code> archive.</strong> Pinned to 1.8.1, via <code>mix archive.install hex phx_new 1.8.1 --force</code>.</p>
+
+<p><strong>3. Picks a database for you.</strong> More on this below, because it’s the decision worth knowing about.</p>
+
+<p><strong>4. Generates the app, sets it up, and starts the server</strong> — <code>mix phx.new</code>, then <code>mix setup</code>, then <code>mix phx.server --open</code>. That last flag opens your browser. The run ends with a working page in front of you, not with instructions.</p>
+
+<h2 id="the-database-choice-is-dumber-than-it-looks">The database choice is dumber than it looks</h2>
+
+<p>Here’s the whole decision:</p>
+
+<pre><code class="language-sh">if command -v psql &gt;/dev/null 2&gt;&amp;1; then
+  # default, Postgres
+elif command -v mysql &gt;/dev/null 2&gt;&amp;1; then
+  db_option="--database mysql"
+else
+  db_option="--database sqlite3"
+fi
+</code></pre>
+
+<p>It checks whether the <em>client binary</em> exists. Not whether a server is running, not whether you can connect, not whether there’s a database it’s allowed to touch. So if you have Postgres.app installed but not started, or a <code>psql</code> left over from some other project, the script confidently picks Postgres and then <code>mix setup</code> walks into a connection error.</p>
+
+<p>I had neither <code>psql</code> nor <code>mysql</code>, so I got the SQLite branch — and for “I want to try Phoenix on a Tuesday night,” SQLite is the right answer anyway. The resulting config is refreshingly boring:</p>
+
+<pre><code class="language-elixir">config :myapp, Myapp.Repo,
+  database: Path.expand("../myapp_dev.db", __DIR__),
+  pool_size: 5
+</code></pre>
+
+<p>No host, no user, no password, no service to start. Just a file. <code>myapp_dev.db</code>, in WAL mode.</p>
+
+<h2 id="what-150-seconds-looks-like">What 150 seconds looks like</h2>
+
+<p>I timed each line. The condensed version:</p>
+
+<pre><code>[    0.3s] downloading elixir-otp-28.zip
+[    0.3s] downloading otp-aarch64-apple-darwin.tar.gz
+[   52.0s] unpacking otp-aarch64-apple-darwin.tar.gz
+[   54.9s] checking Elixir... 1.19.0 ok
+[   60.1s] installed phx_new 1.8.1
+[   60.2s] Using SQLite for the Ecto adapter.
+[   60.5s] * running mix deps.get
+[   74.9s] * running mix deps.compile
+[  144.0s] The database for Myapp.Repo has been created
+[  149.7s] Running MyappWeb.Endpoint with Bandit 1.12.3 at 127.0.0.1:4000
+[  150.2s] GET / — Sent 200 in 48ms
+</code></pre>
+
+<p>Two steps own almost all of it: unpacking the Erlang tarball (~43s) and <code>mix deps.compile</code> (~67s). Everything else is noise. Cost on disk: 185 MB for the runtime, 137 MB for the generated app.</p>
+
+<p>What you get in 2026 is a more opinionated Phoenix than I expected — Phoenix 1.8.9, LiveView 1.1.32, <strong>Bandit</strong> rather than Cowboy as the web server, Tailwind v4 and daisyUI vendored into <code>assets/</code>, a <code>tsconfig.json</code> sitting there in case you want TypeScript, and a git repo already initialised (though with zero commits — the first one is yours to make).</p>
+
+<h2 id="the-generator-doesnt-know-its-being-driven">The generator doesn’t know it’s being driven</h2>
+
+<p>My favourite moment in the log. At 141.7s, <code>mix phx.new</code> prints this:</p>
+
+<pre><code>We are almost there! The following steps are missing:
+
+    $ cd myapp
+
+Then configure your database in config/dev.exs and run:
+
+    $ mix ecto.create
+
+Start your Phoenix app with:
+
+    $ mix phx.server
+</code></pre>
+
+<p>And then the script immediately does all three. <code>phx.new</code> is just being itself — it has no idea a wrapper is about to finish its homework. But if you’re new, you now have a to-do list on screen that is already done, and no way to know that. Ignore it.</p>
+
+<h2 id="the-one-thing-that-actually-bit-me">The one thing that actually bit me</h2>
+
+<p>The install is real, and it’s invisible.</p>
+
+<pre><code class="language-bash">$ zsh -lic 'command -v elixir'
+NOT FOUND in fresh shell
+</code></pre>
+
+<p>The script <code>export</code>s the PATH inside its own process, which is enough for the app to get built and the server to start — and that’s where it ends. Nothing is written to your <code>.zshrc</code>. Open a new terminal and <code>elixir</code> doesn’t exist.</p>
+
+<p>To be fair, the installer tells you. At second 55 of a 150-second run:</p>
+
+<pre><code>Run this (or add to your ~/.bashrc or similar file):
+
+    export PATH=$HOME/.elixir-install/installs/otp/28.1/bin:$PATH
+    export PATH=$HOME/.elixir-install/installs/elixir/1.19.0-otp-28/bin:$PATH
+</code></pre>
+
+<p>So it’s not undocumented. It’s buried. Ninety-five more seconds of dependency resolution scroll past after that, and then your browser opens with a working Phoenix page, and you are absolutely not scrolling back up. Add those two lines to your shell profile — it’s the only manual step the whole thing really needs.</p>
+
+<h2 id="when-to-skip-it">When to skip it</h2>
+
+<p>This is a great front door and a bad long-term plan. If you already manage runtimes with asdf or mise, install Elixir the way you install everything else, then <code>mix phx.new myapp</code> and stay in control of your own versions. Same if you specifically need Postgres, or you’re on an OS the script doesn’t cover — <code>mix phx.new</code> is the real tool here, and the installer is a thin, friendly shell around it.</p>
+
+<p>But for the actual problem I had — wanting to write some Elixir before losing interest — this is exactly right. The friction is the thing that kills spare-time projects, and someone went and deleted it.</p>
+
+<p>Refs: <a href="https://phoenix.hexdocs.pm/installation.html">Installation</a> · <a href="https://phoenix.hexdocs.pm/up_and_running.html">Up and Running</a></p>
+</article><a class="to-top" href="#top" aria-label="Back to top" title="Back to top">↑</a>
+  </main>
+</body>
+</html>
